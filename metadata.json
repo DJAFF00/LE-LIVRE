@@ -1,0 +1,6 @@
+{
+  "name": "LE LIVRE | Édition Exclusive",
+  "description": "Vitrine éditoriale et boutique exclusive pour le livre de développement personnel, motivation et business. Redirection officielle vers Chariow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
