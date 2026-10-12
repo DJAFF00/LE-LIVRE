@@ -13,17 +13,17 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose, onOpe
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/90 backdrop-blur-md animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/90 backdrop-blur-md animate-fadeIn"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-3xl bg-[#121215] border border-white/10 rounded-[32px] overflow-hidden text-white shadow-[0_30px_90px_rgba(0,0,0,0.95)] max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-3xl bg-[#121215] border border-white/10 rounded-[24px] sm:rounded-[32px] overflow-hidden text-white shadow-[0_30px_90px_rgba(0,0,0,0.95)] max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modern Circular Close button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-[#FF5500] text-[#A1A1AA] hover:text-white border border-white/15 hover:border-[#FF5500] flex items-center justify-center transition-all duration-200"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-[#FF5500] text-[#A1A1AA] hover:text-white border border-white/15 hover:border-[#FF5500] flex items-center justify-center transition-all duration-200"
           aria-label="Fermer la fenêtre"
         >
           <X className="w-4 h-4" />
@@ -31,7 +31,7 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose, onOpe
 
         <div className="grid grid-cols-1 md:grid-cols-12">
           {/* Portrait column */}
-          <div className="md:col-span-5 relative bg-[#09090B] min-h-[320px] md:min-h-full">
+          <div className="md:col-span-5 relative bg-[#09090B] min-h-[220px] sm:min-h-[280px] md:min-h-full">
             <img
               src={BOOK_CONFIG.images.author}
               alt="Portrait officiel de l'auteur"
@@ -44,42 +44,42 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose, onOpe
           </div>
 
           {/* Details column */}
-          <div className="md:col-span-7 p-8 md:p-10 space-y-6">
+          <div className="md:col-span-7 p-5 sm:p-8 md:p-10 space-y-4 sm:space-y-6">
             <div>
-              <span className="text-xs uppercase tracking-wider text-[#FF5500] font-mono font-bold block mb-1">
+              <span className="text-[11px] sm:text-xs uppercase tracking-wider text-[#FF5500] font-mono font-bold block mb-1">
                 Profil & Démarche
               </span>
-              <h3 className="text-3xl font-extrabold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                 {BOOK_CONFIG.author.name}
               </h3>
-              <p className="text-xs uppercase tracking-wider text-[#A1A1AA] font-mono mt-1">
+              <p className="text-[11px] sm:text-xs uppercase tracking-wider text-[#A1A1AA] font-mono mt-1">
                 {BOOK_CONFIG.author.role}
               </p>
             </div>
 
-            <div className="space-y-4 text-sm text-[#D4D4D8] font-normal leading-relaxed">
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-[#D4D4D8] font-normal leading-relaxed">
               <p>{BOOK_CONFIG.author.bioLead}</p>
               <p>{BOOK_CONFIG.author.bioText}</p>
             </div>
 
             {/* Vision Quote Box matching the site style */}
-            <div className="p-5 rounded-2xl bg-[#18181D] border-l-4 border-[#FF5500] space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-[#FF5500] font-bold">
-                <Quote className="w-3.5 h-3.5" />
+            <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#18181D] border-l-4 border-[#FF5500] space-y-1.5 sm:space-y-2">
+              <div className="flex items-center gap-1.5 text-xs font-mono text-[#FF5500] font-bold">
+                <Quote className="w-3 h-3" />
                 <span>VISION STRATÉGIQUE</span>
               </div>
-              <p className="text-sm font-medium text-white italic leading-relaxed">
+              <p className="text-xs sm:text-sm font-medium text-white italic leading-relaxed">
                 « {BOOK_CONFIG.author.visionQuote} »
               </p>
             </div>
 
             {/* Editorial Notice */}
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-[#71717A]">
+            <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-[#71717A]">
               <strong className="text-white/80">Note de publication :</strong> {BOOK_CONFIG.author.note}
             </div>
 
             {/* Actions: Signature Orange Pill Button + Close */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3">
               <a
                 href={BOOK_CONFIG.chariowUrl}
                 target="_blank"
@@ -91,18 +91,18 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose, onOpe
                     onOpenChariow();
                   }
                 }}
-                className="group w-full sm:w-auto pl-6 pr-2 py-2 bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-xs uppercase tracking-wider rounded-full inline-flex items-center justify-between sm:justify-start gap-4 transition-all shadow-lg hover:shadow-[0_10px_30px_rgba(255,85,0,0.4)]"
+                className="group w-full sm:w-auto pl-5 sm:pl-6 pr-2 py-2 sm:py-2.5 bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-xs uppercase tracking-wider rounded-full inline-flex items-center justify-between sm:justify-start gap-3 sm:gap-4 transition-all shadow-lg hover:shadow-[0_10px_30px_rgba(255,85,0,0.4)]"
               >
-                <span>Accéder au livre ({BOOK_CONFIG.commercial.price} {BOOK_CONFIG.commercial.currency})</span>
-                <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-0.5">
-                  <ArrowRight className="w-4 h-4" />
+                <span className="truncate">Accéder au livre ({BOOK_CONFIG.commercial.price} {BOOK_CONFIG.commercial.currency})</span>
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-0.5 shrink-0">
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </span>
               </a>
 
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full sm:w-auto px-6 py-3 rounded-full border border-white/15 hover:border-white/30 text-[#A1A1AA] hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors text-center"
+                className="w-full sm:w-auto px-5 py-2.5 sm:py-3 rounded-full border border-white/15 hover:border-white/30 text-[#A1A1AA] hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors text-center"
               >
                 Fermer
               </button>

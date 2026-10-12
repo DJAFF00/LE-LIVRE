@@ -23,53 +23,53 @@ export const ChariowRedirectModal: React.FC<ChariowRedirectModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md animate-fadeIn"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg bg-[#121215] border border-white/10 rounded-3xl p-8 text-white shadow-[0_25px_80px_rgba(0,0,0,0.95)]"
+        className="relative w-full max-w-lg bg-[#121215] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white shadow-[0_25px_80px_rgba(0,0,0,0.95)] max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-[#71717A] hover:text-white rounded-full border border-white/10 transition-colors"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-1.5 sm:p-2 text-[#71717A] hover:text-white rounded-full border border-white/10 transition-colors"
           aria-label="Fermer"
         >
           <X className="w-4 h-4" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#FF5500] uppercase mb-2">
+        <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono font-bold text-[#FF5500] uppercase mb-2">
           <span>Boutique Chariow Officielle</span>
           <span aria-hidden="true" className="text-white/30">/</span>
           <span>Redirection Sécurisée</span>
         </div>
 
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-2.5 sm:mb-3">
           Finaliser votre commande
         </h3>
 
-        <p className="text-sm text-[#A1A1AA] leading-relaxed mb-6 font-normal">
+        <p className="text-xs sm:text-sm text-[#A1A1AA] leading-relaxed mb-5 sm:mb-6 font-normal">
           Vous allez être redirigé vers la boutique officielle sécurisée <strong>Chariow</strong> pour choisir vos options de livraison et régler par carte bancaire protégée.
         </p>
 
         {/* Product Recap Card */}
-        <div className="p-4 rounded-2xl bg-[#18181D] border border-white/10 mb-6 space-y-2">
+        <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#18181D] border border-white/10 mb-5 sm:mb-6 space-y-2">
           <div className="flex justify-between items-center text-xs">
-            <span className="text-[#A1A1AA]">{BOOK_CONFIG.title} — {BOOK_CONFIG.commercial.format}</span>
-            <span className="text-white font-bold text-lg">
+            <span className="text-[#A1A1AA] truncate pr-2">{BOOK_CONFIG.title} — {BOOK_CONFIG.commercial.format}</span>
+            <span className="text-white font-bold text-base sm:text-lg shrink-0">
               {BOOK_CONFIG.commercial.price} {BOOK_CONFIG.commercial.currency}
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-[#71717A]">
-            <Lock className="w-3.5 h-3.5 text-[#FF5500]" />
+          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#71717A]">
+            <Lock className="w-3.5 h-3.5 text-[#FF5500] shrink-0" />
             <span>Paiement chiffré SSL 256 bits opéré par Chariow</span>
           </div>
         </div>
 
         {/* URL editor */}
-        <div className="mb-6 space-y-2">
+        <div className="mb-5 sm:mb-6 space-y-2">
           <div className="flex items-center justify-between text-xs text-[#71717A]">
             <span>URL cible Chariow :</span>
             <button
@@ -91,7 +91,7 @@ export const ChariowRedirectModal: React.FC<ChariowRedirectModalProps> = ({
               className="w-full px-3 py-2 bg-[#09090B] border border-[#FF5500] rounded-xl text-xs font-mono text-white focus:outline-none"
             />
           ) : (
-            <div className="p-3 bg-[#09090B] rounded-xl border border-white/10 text-xs font-mono text-[#A1A1AA] truncate">
+            <div className="p-2.5 sm:p-3 bg-[#09090B] rounded-xl border border-white/10 text-[11px] sm:text-xs font-mono text-[#A1A1AA] truncate">
               {customUrl}
             </div>
           )}
@@ -104,21 +104,21 @@ export const ChariowRedirectModal: React.FC<ChariowRedirectModalProps> = ({
         </div>
 
         {/* Modal Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-1 sm:pt-2">
           <button
             type="button"
             onClick={handleProceed}
-            className="flex-1 group pl-6 pr-2 py-2 bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-xs uppercase tracking-wider rounded-full flex items-center justify-between transition-all shadow-lg"
+            className="flex-1 group pl-5 sm:pl-6 pr-2 py-2 sm:py-2.5 bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-xs uppercase tracking-wider rounded-full flex items-center justify-between transition-all shadow-lg active:scale-[0.98]"
           >
             <span>Continuer vers Chariow</span>
-            <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-0.5 shrink-0">
               <ExternalLink className="w-3.5 h-3.5" />
             </span>
           </button>
           <button
             type="button"
             onClick={onClose}
-            className="px-6 py-3 border border-white/10 hover:border-white/20 rounded-full text-[#A1A1AA] hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors"
+            className="px-5 py-2.5 sm:py-3 border border-white/10 hover:border-white/20 rounded-full text-[#A1A1AA] hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors text-center"
           >
             Retour
           </button>

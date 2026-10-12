@@ -75,7 +75,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           />
 
           {/* Central Logo & Animation */}
-          <div className="relative z-10 flex flex-col items-center max-w-sm px-6 text-center">
+          <div className="relative z-10 flex flex-col items-center max-w-sm px-4 sm:px-6 text-center">
             
             {/* Brand Logo with Orange Dot */}
             <motion.div
@@ -84,10 +84,10 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-2 mb-2"
             >
-              <span className="font-extrabold text-3xl sm:text-4xl tracking-tight text-white">
+              <span className="font-extrabold text-2xl xs:text-3xl sm:text-4xl tracking-tight text-white">
                 {BOOK_CONFIG.title}
               </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5500] inline-block animate-pulse" />
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#FF5500] inline-block animate-pulse" />
             </motion.div>
 
             {/* Tagline */}
@@ -95,13 +95,13 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-xs uppercase tracking-[0.25em] text-[#A1A1AA] font-mono mb-6"
+              className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#A1A1AA] font-mono mb-5 sm:mb-6"
             >
               {BOOK_CONFIG.titleSuffix}
             </motion.p>
 
             {/* Animated Morphing Keywords: Ambition, Discipline, Stratégie, ... */}
-            <div className="h-8 flex items-center justify-center mb-6 overflow-hidden">
+            <div className="h-8 flex items-center justify-center mb-5 sm:mb-6 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentKeyword}
@@ -109,7 +109,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                   exit={{ opacity: 0, y: -10, filter: 'blur(3px)' }}
                   transition={{ duration: 0.25, ease: 'easeOut' }}
-                  className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold tracking-[0.3em] uppercase text-[#FFA24A] font-mono"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#FFA24A] font-mono"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500]" />
                   <span>{currentKeyword}</span>
@@ -119,7 +119,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             </div>
 
             {/* Progress Bar Container */}
-            <div className="w-64 sm:w-72 h-[3px] bg-white/10 rounded-full overflow-hidden relative mb-4">
+            <div className="w-52 xs:w-64 sm:w-72 h-[3px] bg-white/10 rounded-full overflow-hidden relative mb-3 sm:mb-4">
               <motion.div
                 className="h-full bg-gradient-to-r from-[#D43800] via-[#FF5500] to-[#FFA24A] rounded-full shadow-[0_0_12px_rgba(255,85,0,0.9)]"
                 style={{ width: `${progress}%` }}
@@ -128,7 +128,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             </div>
 
             {/* Numeric Percentage & Status */}
-            <div className="flex items-center justify-between w-64 sm:w-72 text-xs font-mono text-[#71717A]">
+            <div className="flex items-center justify-between w-52 xs:w-64 sm:w-72 text-[11px] sm:text-xs font-mono text-[#71717A]">
               <span className="tracking-wider">CHARGEMENT</span>
               <span className="text-white font-semibold tabular-nums">
                 {Math.round(progress)}%
