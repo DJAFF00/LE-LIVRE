@@ -64,7 +64,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           key="preloader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -40, transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#09090B] text-white select-none cursor-default"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#09090B] text-white select-none cursor-default overflow-hidden"
         >
           {/* Background Ambient Sunset Glow */}
           <div 

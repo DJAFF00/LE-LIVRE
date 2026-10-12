@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenChariow, onOpenReader }) =
             href="#"
             className="flex items-center gap-1.5 sm:gap-2 text-white font-extrabold text-base sm:text-lg md:text-xl tracking-tight group shrink-0"
           >
-            <span className="truncate max-w-[140px] xs:max-w-none">{BOOK_CONFIG.title}</span>
+            <span className="truncate max-w-[150px] sm:max-w-none">{BOOK_CONFIG.title}</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] inline-block animate-pulse shrink-0" />
           </a>
 

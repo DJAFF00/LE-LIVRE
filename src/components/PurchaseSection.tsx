@@ -16,7 +16,7 @@ export const PurchaseSection: React.FC<PurchaseSectionProps> = ({ onOpenChariow 
   };
 
   return (
-    <section id="commander" className="py-14 sm:py-20 md:py-28 bg-[#09090B] text-white relative border-t border-white/[0.08]">
+    <section id="commander" className="py-14 sm:py-20 md:py-28 bg-[#09090B] text-white relative border-t border-white/[0.08] overflow-hidden">
       {/* Background radial glow */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] lg:w-[700px] h-[350px] sm:h-[500px] lg:h-[700px] pointer-events-none rounded-full blur-[140px] sm:blur-[180px] opacity-20"
